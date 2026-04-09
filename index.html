@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,27 +8,35 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy:    #0F084B;
-      --navy-d:  #09052e;
-      --blue:    #126899;
-      --blue-l:  #1a85c2;
-      --orange:  #F26419;
-
-      --card-bg:   rgba(255,255,255,.05);
-      --card-bg2:  rgba(255,255,255,.08);
-      --card-bdr:  rgba(255,255,255,.10);
-      --card-bdr2: rgba(255,255,255,.18);
-
-      --text:   #ffffff;
-      --text-2: rgba(255,255,255,.72);
-      --text-3: rgba(255,255,255,.45);
-      --text-4: rgba(255,255,255,.28);
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { background: var(--navy-d); }
+    :root {
+      --navy: #0F084B;
+      --navy-d: #09052e;
+      --blue: #126899;
+      --blue-l: #1a85c2;
+      --orange: #F26419;
+
+      --card-bg: rgba(255, 255, 255, .05);
+      --card-bg2: rgba(255, 255, 255, .08);
+      --card-bdr: rgba(255, 255, 255, .10);
+      --card-bdr2: rgba(255, 255, 255, .18);
+
+      --text: #ffffff;
+      --text-2: rgba(255, 255, 255, .72);
+      --text-3: rgba(255, 255, 255, .45);
+      --text-4: rgba(255, 255, 255, .28);
+    }
+
+    html {
+      background: var(--navy-d);
+    }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
@@ -37,42 +46,44 @@
       background: var(--navy-d);
     }
 
-    /* PAGE */
+    /* PAGE - Mobile First */
     .page {
-      width: 820px;
-      min-height: 1140px;
+      width: 100%;
+      min-height: 100vh;
       background: var(--navy);
-      margin: 32px auto;
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.06),
-        0 20px 60px rgba(0,0,0,.6);
-      border-radius: 12px;
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
       overflow: hidden;
       display: flex;
       flex-direction: column;
     }
 
-    /* HEADER */
+    /* HEADER - Mobile First */
     .doc-header {
       background: var(--navy-d);
-      padding: 22px 48px 20px;
+      padding: 18px 20px 16px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
       align-items: center;
       border-bottom: 1px solid var(--card-bdr);
     }
 
     .logo-wrap img {
-      height: 36px;
+      height: 48px;
       display: block;
     }
 
-    .header-right { text-align: right; }
+    .header-right {
+      text-align: center;
+    }
 
     .header-right .doc-badge {
       display: inline-block;
-      background: rgba(242,100,25,.15);
-      border: 1px solid rgba(242,100,25,.3);
+      background: rgba(242, 100, 25, .15);
+      border: 1px solid rgba(242, 100, 25, .3);
       color: var(--orange);
       font-size: 8.5px;
       font-weight: 800;
@@ -104,11 +115,16 @@
       flex-shrink: 0;
     }
 
-    /* PAGE BODY */
-    .page-body { padding: 30px 48px 34px; flex: 1; }
+    /* PAGE BODY - Mobile First */
+    .page-body {
+      padding: 24px 20px 28px;
+      flex: 1;
+    }
 
     /* SECTION */
-    .section { margin-bottom: 22px; }
+    .section {
+      margin-bottom: 22px;
+    }
 
     .section-title {
       display: flex;
@@ -123,7 +139,7 @@
       border-radius: 50%;
       background: var(--orange);
       flex-shrink: 0;
-      box-shadow: 0 0 8px rgba(242,100,25,.6);
+      box-shadow: 0 0 8px rgba(242, 100, 25, .6);
     }
 
     .section-title h2 {
@@ -152,12 +168,16 @@
       line-height: 1.75;
       color: var(--text-2);
     }
-    .summary strong { color: var(--orange); font-weight: 700; }
 
-    /* TECH GRID */
+    .summary strong {
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    /* TECH GRID - Mobile First */
     .tech-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr;
       gap: 8px;
     }
 
@@ -168,17 +188,41 @@
       border-radius: 0 0 8px 8px;
       padding: 12px;
     }
-    .tech-card.oc { border-top-color: var(--orange); }
 
-    .tech-card .tc-name { font-size: 13px; font-weight: 800; color: var(--text); letter-spacing: -.2px; }
-    .tech-card .tc-role { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--blue-l); margin: 3px 0 8px; }
-    .tech-card.oc .tc-role { color: var(--orange); }
-    .tech-card p { font-size: 10.5px; color: var(--text-3); line-height: 1.55; }
+    .tech-card.oc {
+      border-top-color: var(--orange);
+    }
+
+    .tech-card .tc-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -.2px;
+    }
+
+    .tech-card .tc-role {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--blue-l);
+      margin: 3px 0 8px;
+    }
+
+    .tech-card.oc .tc-role {
+      color: var(--orange);
+    }
+
+    .tech-card p {
+      font-size: 10.5px;
+      color: var(--text-3);
+      line-height: 1.55;
+    }
 
     /* WHY STRIP */
     .why-strip {
-      background: rgba(242,100,25,.07);
-      border: 1px solid rgba(242,100,25,.2);
+      background: rgba(242, 100, 25, .07);
+      border: 1px solid rgba(242, 100, 25, .2);
       border-left: 4px solid var(--orange);
       border-radius: 0 6px 6px 0;
       padding: 10px 15px;
@@ -187,15 +231,22 @@
       margin-top: 8px;
       line-height: 1.6;
     }
-    .why-strip strong { color: var(--text-2); }
+
+    .why-strip strong {
+      color: var(--text-2);
+    }
 
     /* TABLE */
-    .ft-table { width: 100%; border-collapse: collapse; }
+    .ft-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
     .ft-table thead tr {
       background: var(--card-bg2);
-      border-bottom: 1px solid rgba(18,104,153,.4);
+      border-bottom: 1px solid rgba(18, 104, 153, .4);
     }
+
     .ft-table thead th {
       padding: 8px 11px;
       font-size: 9px;
@@ -205,10 +256,27 @@
       color: var(--blue-l);
       text-align: left;
     }
-    .ft-table tbody tr { border-bottom: 1px solid var(--card-bdr); }
-    .ft-table tbody tr:last-child { border-bottom: none; }
-    .ft-table tbody td { padding: 8px 11px; color: var(--text-3); font-size: 11.5px; vertical-align: top; }
-    .ft-table .pn { font-weight: 700; color: var(--text-2); }
+
+    .ft-table tbody tr {
+      border-bottom: 1px solid var(--card-bdr);
+    }
+
+    .ft-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .ft-table tbody td {
+      padding: 8px 11px;
+      color: var(--text-3);
+      font-size: 11.5px;
+      vertical-align: top;
+    }
+
+    .ft-table .pn {
+      font-weight: 700;
+      color: var(--text-2);
+    }
+
     .ft-table .total-row td {
       background: var(--orange);
       color: white;
@@ -218,45 +286,115 @@
     }
 
     /* PILL */
-    .pill { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 9.5px; font-weight: 700; }
-    .pill.b  { background: rgba(18,104,153,.25); color: var(--blue-l); }
-    .pill.o  { background: rgba(242,100,25,.2);  color: var(--orange); }
-    .pill.g  { background: rgba(23,190,187,.15); color: #23d4cf; }
+    .pill {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 20px;
+      font-size: 9.5px;
+      font-weight: 700;
+    }
 
-    /* TIMELINE */
+    .pill.b {
+      background: rgba(18, 104, 153, .25);
+      color: var(--blue-l);
+    }
+
+    .pill.o {
+      background: rgba(242, 100, 25, .2);
+      color: var(--orange);
+    }
+
+    .pill.g {
+      background: rgba(23, 190, 187, .15);
+      color: #23d4cf;
+    }
+
+    /* TIMELINE - Mobile First */
     .timeline {
       display: flex;
+      flex-direction: column;
       border: 1px solid var(--card-bdr);
       border-radius: 8px;
       overflow: hidden;
     }
-    .tl-item { flex: 1; padding: 12px 14px; border-right: 1px solid var(--card-bdr); }
-    .tl-item:last-child { border-right: none; }
+
+    .tl-item {
+      flex: 1;
+      padding: 12px 14px;
+      border-right: none;
+      border-bottom: 1px solid var(--card-bdr);
+    }
+
+    .tl-item:last-child {
+      border-bottom: none;
+    }
+
     .tl-item.hl {
-      background: rgba(242,100,25,.1);
-      border-right-color: rgba(242,100,25,.2);
+      background: rgba(242, 100, 25, .1);
+      border-right-color: rgba(242, 100, 25, .2);
       border-left: 2px solid var(--orange);
     }
-    .tl-wk { font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-4); }
-    .tl-dt { font-size: 11px; font-weight: 700; color: var(--blue-l); margin: 3px 0 4px; }
-    .tl-item.hl .tl-dt { color: var(--orange); }
-    .tl-lb { font-size: 11.5px; font-weight: 600; color: var(--text); line-height: 1.35; }
-    .tl-sb { font-size: 10px; color: var(--text-4); margin-top: 3px; }
 
-    /* PAGE FOOTER */
+    .tl-wk {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-4);
+    }
+
+    .tl-dt {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue-l);
+      margin: 3px 0 4px;
+    }
+
+    .tl-item.hl .tl-dt {
+      color: var(--orange);
+    }
+
+    .tl-lb {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .tl-sb {
+      font-size: 10px;
+      color: var(--text-4);
+      margin-top: 3px;
+    }
+
+    /* PAGE FOOTER - Mobile First */
     .page-footer {
       border-top: 1px solid var(--card-bdr);
-      padding: 11px 48px 13px;
+      padding: 11px 20px 13px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 6px;
+      justify-content: center;
       align-items: center;
+      text-align: center;
       flex-shrink: 0;
     }
-    .page-footer p { font-size: 10px; color: var(--text-4); }
-    .page-footer strong { color: var(--text-3); }
 
-    /* SOCIAL GRID */
-    .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .page-footer p {
+      font-size: 9px;
+      color: var(--text-4);
+    }
+
+    .page-footer strong {
+      color: var(--text-3);
+    }
+
+    /* SOCIAL GRID - Mobile First */
+    .social-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
 
     .sc-card {
       background: var(--card-bg);
@@ -265,14 +403,41 @@
       border-radius: 0 8px 8px 0;
       padding: 11px 13px;
     }
-    .sc-card.oc { border-left-color: var(--orange); }
-    .sc-card .sc-title { font-size: 11px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
-    .sc-card p { font-size: 10.5px; color: var(--text-3); line-height: 1.55; }
-    .sc-card strong { color: var(--text-2); }
-    .sc-card em { color: var(--text-4); font-style: normal; font-size: 10px; }
 
-    /* PAYMENT GRID */
-    .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+    .sc-card.oc {
+      border-left-color: var(--orange);
+    }
+
+    .sc-card .sc-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+
+    .sc-card p {
+      font-size: 10.5px;
+      color: var(--text-3);
+      line-height: 1.55;
+    }
+
+    .sc-card strong {
+      color: var(--text-2);
+    }
+
+    .sc-card em {
+      color: var(--text-4);
+      font-style: normal;
+      font-size: 10px;
+    }
+
+    /* PAYMENT GRID - Mobile First */
+    .payment-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
 
     .pay-card {
       background: var(--card-bg);
@@ -280,17 +445,51 @@
       border-radius: 8px;
       padding: 16px 18px;
     }
-    .pay-card.hi { background: rgba(242,100,25,.1); border-color: rgba(242,100,25,.3); }
-    .pay-card .pc-lbl { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: var(--text-4); margin-bottom: 6px; }
-    .pay-card .pc-amt { font-size: 28px; font-weight: 900; color: var(--text); letter-spacing: -1.5px; line-height: 1; }
-    .pay-card.hi .pc-amt { color: var(--orange); }
-    .pay-card .pc-cop { font-size: 11px; color: var(--text-4); margin-top: 3px; }
-    .pay-card .pc-note { font-size: 10.5px; color: var(--text-3); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--card-bdr); }
+
+    .pay-card.hi {
+      background: rgba(242, 100, 25, .1);
+      border-color: rgba(242, 100, 25, .3);
+    }
+
+    .pay-card .pc-lbl {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--text-4);
+      margin-bottom: 6px;
+    }
+
+    .pay-card .pc-amt {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: -1.5px;
+      line-height: 1;
+    }
+
+    .pay-card.hi .pc-amt {
+      color: var(--orange);
+    }
+
+    .pay-card .pc-cop {
+      font-size: 11px;
+      color: var(--text-4);
+      margin-top: 3px;
+    }
+
+    .pay-card .pc-note {
+      font-size: 10.5px;
+      color: var(--text-3);
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--card-bdr);
+    }
 
     /* NOTE BOX */
     .note-box {
-      background: rgba(18,104,153,.08);
-      border: 1px solid rgba(18,104,153,.2);
+      background: rgba(18, 104, 153, .08);
+      border: 1px solid rgba(18, 104, 153, .2);
       border-radius: 6px;
       padding: 10px 15px;
       font-size: 11px;
@@ -300,10 +499,17 @@
       gap: 10px;
       line-height: 1.6;
     }
-    .note-box strong { color: var(--text-2); }
 
-    /* INFO CARDS */
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .note-box strong {
+      color: var(--text-2);
+    }
+
+    /* INFO CARDS - Mobile First */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
 
     .info-card {
       background: var(--card-bg);
@@ -311,413 +517,612 @@
       border-radius: 8px;
       padding: 14px 16px;
     }
+
     .info-card h4 {
       font-size: 11.5px;
       font-weight: 700;
       color: var(--text);
       margin-bottom: 10px;
       padding-bottom: 8px;
-      border-bottom: 1px solid rgba(242,100,25,.3);
+      border-bottom: 1px solid rgba(242, 100, 25, .3);
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .info-card ul { padding-left: 15px; }
-    .info-card li { font-size: 11px; color: var(--text-3); margin-bottom: 5px; line-height: 1.5; }
-    .info-card strong { color: var(--text-2); }
 
-    /* CONTACT BANNER */
+    .info-card ul {
+      padding-left: 15px;
+    }
+
+    .info-card li {
+      font-size: 11px;
+      color: var(--text-3);
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+
+    .info-card strong {
+      color: var(--text-2);
+    }
+
+    /* CONTACT BANNER - Mobile First */
     .contact-banner {
-      background: linear-gradient(135deg, var(--navy-d) 0%, #0d2a5e 50%, rgba(18,104,153,.35) 100%);
+      background: linear-gradient(135deg, var(--navy-d) 0%, #0d2a5e 50%, rgba(18, 104, 153, .35) 100%);
       border: 1px solid var(--card-bdr2);
       border-radius: 10px;
       padding: 18px 22px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
       align-items: center;
       margin-top: 18px;
     }
-    .cb-logo img { height: 28px; opacity: .85; }
-    .cb-right { text-align: right; }
-    .cb-right .cb-lbl { font-size: 9px; color: var(--text-4); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 4px; }
-    .cb-right .cb-name { font-size: 15px; font-weight: 800; color: var(--text); }
-    .cb-right .cb-role { font-size: 10px; color: var(--orange); letter-spacing: .1em; font-weight: 700; margin-top: 2px; }
-    .cb-right .cb-email { font-size: 11px; color: var(--text-3); margin-top: 4px; }
 
-    /* RESPONSIVE */
-    @media (max-width: 860px) {
-      .page { width: 100%; border-radius: 0; }
-      .doc-header, .page-body, .page-footer { padding-left: 24px; padding-right: 24px; }
-      .tech-grid, .social-grid { grid-template-columns: 1fr 1fr; }
-      .two-col, .payment-grid { grid-template-columns: 1fr; }
-      .timeline { flex-direction: column; }
-      .tl-item { border-right: none; border-bottom: 1px solid var(--card-bdr); }
+    .cb-logo img {
+      height: 28px;
+      opacity: .85;
+    }
+
+    .cb-right {
+      text-align: center;
+    }
+
+    .cb-right .cb-lbl {
+      font-size: 9px;
+      color: var(--text-4);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .cb-right .cb-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .cb-right .cb-role {
+      font-size: 10px;
+      color: var(--orange);
+      letter-spacing: .1em;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .cb-right .cb-email {
+      font-size: 11px;
+      color: var(--text-3);
+      margin-top: 4px;
+    }
+
+    /* RESPONSIVE - Mobile First Approach */
+
+    /* Tablet: 640px and up */
+    @media (min-width: 640px) {
+      .doc-header {
+        padding: 20px 32px 18px;
+      }
+
+      .page-body {
+        padding: 28px 32px 32px;
+      }
+
+      .page-footer {
+        padding: 11px 32px 13px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .page-footer p {
+        font-size: 10px;
+      }
+
+      .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .two-col {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .payment-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-banner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .cb-right {
+        text-align: right;
+      }
+    }
+
+    /* Desktop: 860px and up */
+    @media (min-width: 860px) {
+      .page {
+        width: 820px;
+        margin: 32px auto;
+        border-radius: 12px;
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, .06),
+          0 20px 60px rgba(0, 0, 0, .6);
+      }
+
+      .doc-header {
+        padding: 22px 48px 20px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .header-right {
+        text-align: right;
+      }
+
+      .page-body {
+        padding: 30px 48px 34px;
+      }
+
+      .page-footer {
+        padding: 11px 48px 13px;
+      }
+
+      .tech-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .timeline {
+        flex-direction: row;
+      }
+
+      .tl-item {
+        border-right: 1px solid var(--card-bdr);
+        border-bottom: none;
+      }
+
+      .tl-item:last-child {
+        border-right: none;
+      }
     }
 
     @media print {
-      html, body { background: var(--navy); }
-      .page { margin: 0; box-shadow: none; border-radius: 0; page-break-after: always; }
+
+      html,
+      body {
+        background: var(--navy);
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        page-break-after: always;
+      }
+
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
   </style>
 </head>
+
 <body>
 
-<!-- ═══════════ PAGE 1 ═══════════ -->
-<div class="page">
+  <!-- ═══════════ PAGE 1 ═══════════ -->
+  <div class="page">
 
-  <header class="doc-header">
-    <div class="logo-wrap">
-      <img src="Horizontal_5.png" alt="Feral Tech" />
-    </div>
-    <div class="header-right">
-      <div class="doc-badge">Propuesta de Desarrollo Web</div>
-      <div class="doc-title">Sitio Web Corporativo Regional</div>
-      <div class="doc-sub">
-        Qualier Internacional &nbsp;·&nbsp;
-        Venezuela &nbsp;·&nbsp; Colombia &nbsp;·&nbsp; Panamá &nbsp;·&nbsp; R. Dominicana
-      </div>
-      <div class="doc-sub" style="margin-top:4px;font-size:10px;color:var(--text-4)">
-        Marzo 2026 &nbsp;·&nbsp; Versión 1.0 &nbsp;·&nbsp; Confidencial
-      </div>
-    </div>
-  </header>
-
-  <div class="accent-bar"></div>
-
-  <div class="page-body">
-
-    <!-- RESUMEN EJECUTIVO -->
-    <div class="section">
-      <div class="section-title"><div class="dot"></div><h2>Resumen Ejecutivo</h2></div>
-      <div class="summary">
-        Se propone el desarrollo de un <strong>sitio web corporativo regional</strong> para Qualier Internacional, con presencia unificada en cuatro mercados bajo el dominio <strong>qualierinternational.com</strong>. La solución contempla un <strong>CMS propio</strong> sin dependencia de plataformas externas, arquitectura preparada para integración futura con <strong>Odoo ERP</strong>, y un stack tecnológico moderno que garantiza rendimiento, escalabilidad y control total del código. El lanzamiento está proyectado para <strong>mediados de mayo de 2026</strong>, alineado al rebranding oficial del Grupo.
-      </div>
-    </div>
-
-    <!-- STACK -->
-    <div class="section">
-      <div class="section-title"><div class="dot"></div><h2>Stack Tecnológico Recomendado</h2></div>
-      <div class="tech-grid">
-        <div class="tech-card">
-          <div class="tc-name">Astro</div>
-          <div class="tc-role">Frontend · Sitio Público</div>
-          <p>Framework SEO-first. Renderizado híbrido SSG + SSR. Cero JS innecesario. Soporte nativo multiidioma ES/EN.</p>
-        </div>
-        <div class="tech-card">
-          <div class="tc-name">Supabase</div>
-          <div class="tc-role">Base de Datos · Auth</div>
-          <p>PostgreSQL gestionado. Auth para el CMS. Almacenamiento de archivos. Preparado para API REST de Odoo.</p>
-        </div>
-        <div class="tech-card">
-          <div class="tc-name">Vercel</div>
-          <div class="tc-role">Hosting · Serverless</div>
-          <p>CDN global. Deploy automático desde Git. Funciones serverless para API y formularios. Soporte nativo Astro.</p>
-        </div>
-        <div class="tech-card oc">
-          <div class="tc-name">CMS Propio</div>
-          <div class="tc-role">Panel de Administración</div>
-          <p>En React, integrado al proyecto. Gestión de productos, blog, contactos y datos por país. Sin licencias.</p>
-        </div>
-      </div>
-      <div class="why-strip">
-        <strong>¿Por qué no WordPress u otras plataformas?</strong>&nbsp; Un stack propio elimina licencias y dependencias, y permite integración directa con <strong>Odoo ERP</strong> vía API REST — algo que plataformas cerradas no facilitan sin plugins costosos o limitaciones técnicas.
-      </div>
-    </div>
-
-    <!-- ALCANCE -->
-    <div class="section">
-      <div class="section-title"><div class="dot"></div><h2>Alcance del Proyecto</h2></div>
-      <table class="ft-table">
-        <thead>
-          <tr>
-            <th style="width:24px">#</th>
-            <th style="width:165px">Fase</th>
-            <th>Entregables principales</th>
-            <th style="width:70px">Duración</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="pn">1</td>
-            <td><strong style="color:var(--text-2)">Arquitectura & Setup</strong></td>
-            <td>Configuración de repo, Supabase, Vercel, estructura base del proyecto y esquema de datos del CMS.</td>
-            <td><span class="pill b">2 sem.</span></td>
-          </tr>
-          <tr>
-            <td class="pn">2</td>
-            <td><strong style="color:var(--text-2)">UX / UI Design</strong></td>
-            <td>Wireframes, sistema de diseño basado en el Manual de Identidad Qualier, diseño de todas las vistas (8 secciones + CMS admin).</td>
-            <td><span class="pill b">2 sem.</span></td>
-          </tr>
-          <tr>
-            <td class="pn">3</td>
-            <td><strong style="color:var(--text-2)">Desarrollo Frontend</strong></td>
-            <td>Home, Quiénes Somos, Productos, Presencia x País (4 mercados), Calidad, Blog, Contacto, Trabaja con Nosotros. Mobile-first.</td>
-            <td><span class="pill b">3 sem.</span></td>
-          </tr>
-          <tr>
-            <td class="pn">4</td>
-            <td><strong style="color:var(--text-2)">CMS Propio</strong></td>
-            <td>Panel admin con roles de usuario, CRUD completo de productos, blog, contactos y datos por país. Auth con Supabase.</td>
-            <td><span class="pill b">2 sem.</span></td>
-          </tr>
-          <tr>
-            <td class="pn">5</td>
-            <td><strong style="color:var(--text-2)">Integraciones & SEO</strong></td>
-            <td>Redes sociales, formulario de contacto segmentado, meta tags, sitemap, Google Analytics 4.</td>
-            <td><span class="pill b">1 sem.</span></td>
-          </tr>
-          <tr>
-            <td class="pn">6</td>
-            <td><strong style="color:var(--text-2)">QA & Lanzamiento</strong></td>
-            <td>Pruebas multi-navegador y dispositivos, configuración de dominio, SSL, puesta en producción y entrega de accesos.</td>
-            <td><span class="pill b">1 sem.</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- CRONOGRAMA -->
-    <div class="section">
-      <div class="section-title"><div class="dot"></div><h2>Cronograma Estimado</h2></div>
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-wk">Sem 1–2</div>
-          <div class="tl-dt">24 mar – 7 abr</div>
-          <div class="tl-lb">Arquitectura &<br>Setup</div>
-          <div class="tl-sb">Antes del manual de marca</div>
-        </div>
-        <div class="tl-item hl">
-          <div class="tl-wk">Sem 3–4</div>
-          <div class="tl-dt">10 – 24 abr</div>
-          <div class="tl-lb">Diseño<br>UX/UI</div>
-          <div class="tl-sb">Manual identidad disponible</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-wk">Sem 5–7</div>
-          <div class="tl-dt">24 abr – 8 may</div>
-          <div class="tl-lb">Frontend +<br>CMS</div>
-          <div class="tl-sb">Desarrollo en paralelo</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-wk">Sem 8</div>
-          <div class="tl-dt">8 – 15 may</div>
-          <div class="tl-lb">Integraciones,<br>QA & 🚀</div>
-          <div class="tl-sb">Lanzamiento ~15 mayo</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <footer class="page-footer">
-    <p><strong>César Blanco &nbsp;·&nbsp; Feral Tech</strong> &nbsp;·&nbsp; cesarfbg10@gmail.com</p>
-    <p>Propuesta válida 30 días &nbsp;·&nbsp; Pág. 1 / 2</p>
-  </footer>
-
-</div><!-- /page 1 -->
-
-
-<!-- ═══════════ PAGE 2 ═══════════ -->
-<div class="page">
-
-  <header class="doc-header">
-    <div class="logo-wrap">
-      <img src="Horizontal_5.png" alt="Feral Tech" />
-    </div>
-    <div class="header-right">
-      <div class="doc-badge">Propuesta de Desarrollo Web</div>
-      <div class="doc-title">Inversión y Condiciones</div>
-      <div class="doc-sub">Qualier Internacional &nbsp;·&nbsp; Continuación &nbsp;·&nbsp; Pág. 2 / 2</div>
-    </div>
-  </header>
-
-  <div class="accent-bar"></div>
-
-  <div class="page-body">
-
-    <!-- REDES SOCIALES -->
-    <div class="section">
-      <div class="section-title"><div class="dot"></div><h2>Integración con Redes Sociales — ¿Qué incluye?</h2></div>
-      <div class="social-grid">
-        <div class="sc-card">
-          <div class="sc-title">Previsualizaciones Enriquecidas (OG)</div>
-          <p>Cuando cualquier URL del sitio se comparte en WhatsApp, LinkedIn, Facebook o Telegram, se genera automáticamente una tarjeta visual con imagen, título y descripción. Aumenta la tasa de clics en comunicaciones de marca.</p>
-        </div>
-        <div class="sc-card">
-          <div class="sc-title">Botones de Compartir y WhatsApp</div>
-          <p>Blog y fichas de producto con botones para compartir en redes. Cada sección de país incluirá un botón de <strong>WhatsApp Business</strong> con el número local de atención directa.</p>
-        </div>
-        <div class="sc-card oc">
-          <div class="sc-title">Píxeles de Seguimiento y Analytics</div>
-          <p><strong>Facebook Pixel</strong> y <strong>LinkedIn Insight Tag</strong> para retargeting y audiencias similares. <strong>Google Analytics 4</strong> para tráfico, conversiones y origen de visitas por país.</p>
-        </div>
-        <div class="sc-card">
-          <div class="sc-title">Links a Perfiles Oficiales</div>
-          <p>Cabecera y pie de página con íconos a Instagram, LinkedIn y Facebook. Configurables desde el CMS sin tocar código, diferenciables por país si se requiere.</p>
-        </div>
-        <div class="sc-card">
-          <div class="sc-title">SEO Social y Schema Markup</div>
-          <p>Metadatos estructurados <strong>Schema.org</strong> para empresa, productos, ubicaciones y artículos. Mejora el posicionamiento orgánico y las búsquedas de marca en Google.</p>
-        </div>
-        <div class="sc-card oc">
-          <div class="sc-title">Feed de Instagram (Opcional)</div>
-          <p>Últimas publicaciones del Instagram corporativo en la página de inicio. Actualización automática. <em>Requiere cuenta de Instagram Business verificada.</em></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- INVERSIÓN -->
-    <div class="section">
-      <div class="section-title"><div class="dot"></div><h2>Inversión · Desarrollo del Sitio</h2></div>
-      <table class="ft-table">
-        <thead>
-          <tr>
-            <th>Fase</th>
-            <th>Descripción</th>
-            <th style="width:88px">USD</th>
-            <th style="width:118px">COP aprox.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="pn">Fase 1</td>
-            <td>Arquitectura, setup de infraestructura y base de datos</td>
-            <td style="font-weight:700;color:var(--text)">$500</td>
-            <td style="color:var(--text-4);font-size:11px">$1.850.000</td>
-          </tr>
-          <tr>
-            <td class="pn">Fase 2</td>
-            <td>Diseño UX/UI completo — wireframes + diseño visual + sistema de diseño</td>
-            <td style="font-weight:700;color:var(--text)">$900</td>
-            <td style="color:var(--text-4);font-size:11px">$3.330.000</td>
-          </tr>
-          <tr>
-            <td class="pn">Fase 3</td>
-            <td>Desarrollo frontend Astro — 8 secciones responsivas (mobile-first)</td>
-            <td style="font-weight:700;color:var(--text)">$1.400</td>
-            <td style="color:var(--text-4);font-size:11px">$5.180.000</td>
-          </tr>
-          <tr>
-            <td class="pn">Fase 4</td>
-            <td>CMS propio — panel admin, roles, CRUD completo, gestión de medios</td>
-            <td style="font-weight:700;color:var(--text)">$1.400</td>
-            <td style="color:var(--text-4);font-size:11px">$5.180.000</td>
-          </tr>
-          <tr>
-            <td class="pn">Fase 5–6</td>
-            <td>Integraciones RRSS, SEO, formularios, QA y puesta en producción</td>
-            <td style="font-weight:700;color:var(--text)">$700</td>
-            <td style="color:var(--text-4);font-size:11px">$2.590.000</td>
-          </tr>
-          <tr class="total-row">
-            <td colspan="2">TOTAL PROYECTO &nbsp;·&nbsp; Precio fijo, todo incluido</td>
-            <td>$4.900 USD</td>
-            <td>~$18.130.000</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="payment-grid">
-        <div class="pay-card">
-          <div class="pc-lbl">Anticipo al inicio · 40%</div>
-          <div class="pc-amt">$1.960</div>
-          <div class="pc-cop">~$7.252.000 COP</div>
-          <div class="pc-note">Al firmar el contrato, antes de iniciar la Fase 1.</div>
-        </div>
-        <div class="pay-card hi">
-          <div class="pc-lbl">Pago al lanzamiento · 60%</div>
-          <div class="pc-amt">$2.940</div>
-          <div class="pc-cop">~$10.878.000 COP</div>
-          <div class="pc-note">Al aprobar el sitio en producción, antes de entrega de accesos.</div>
-        </div>
-      </div>
-
-      <div class="note-box">
-        <span>📌</span>
-        <span>TRM de referencia: <strong>1 USD = $3.700 COP</strong> (marzo 2026). El precio en USD es el valor contractual. Los costos de infraestructura (Vercel + Supabase) <strong>no están incluidos</strong> y son asumidos por el cliente (~$0–50 USD/mes según tráfico).</span>
-      </div>
-    </div>
-
-    <!-- MANTENIMIENTO -->
-    <div class="section">
-      <div class="section-title"><div class="dot"></div><h2>Mantenimiento Post-Lanzamiento &amp; Roadmap</h2></div>
-      <div class="two-col">
-        <div class="info-card">
-          <h4>
-            Plan Estándar
-            <span style="font-size:11px;font-weight:600;color:var(--orange)">$150 USD/mes</span>
-          </h4>
-          <ul>
-            <li>Monitoreo de disponibilidad y rendimiento</li>
-            <li>Actualizaciones de dependencias y seguridad</li>
-            <li>Soporte técnico — hasta 4 horas/mes</li>
-            <li>Corrección de bugs post-lanzamiento</li>
-            <li>Backups mensuales de base de datos</li>
-          </ul>
-        </div>
-        <div class="info-card">
-          <h4>Fases Futuras <span style="font-weight:400;font-size:10px;color:var(--text-4)">(no incluidas)</span></h4>
-          <ul>
-            <li><span class="pill g">Fase 2</span>&nbsp; Integración Odoo ERP — portal de clientes</li>
-            <li><span class="pill g">Fase 2</span>&nbsp; Intranet corporativa con autenticación</li>
-            <li><span class="pill o">Opcional</span>&nbsp; Versión en inglés del sitio</li>
-            <li><span class="pill o">Opcional</span>&nbsp; App móvil nativa o PWA</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONDICIONES -->
-    <div class="section">
-      <div class="section-title"><div class="dot"></div><h2>Condiciones &amp; Próximos Pasos</h2></div>
-      <div class="two-col">
-        <div class="info-card">
-          <h4>Condiciones generales</h4>
-          <ul>
-            <li>Propuesta válida por <strong>30 días</strong> calendario</li>
-            <li>El cliente provee contenidos: textos, fotos, logos y datos legales por país</li>
-            <li>Diseño visual inicia tras entrega del Manual de Identidad (~10 abr)</li>
-            <li>Pagos en COP se acuerdan a TRM del día de pago</li>
-            <li>30 días de garantía post-lanzamiento sin costo adicional</li>
-          </ul>
-        </div>
-        <div class="info-card">
-          <h4>Para proceder</h4>
-          <ul>
-            <li><strong>1.</strong> Aprobación de esta propuesta</li>
-            <li><strong>2.</strong> Firma del contrato de prestación de servicios</li>
-            <li><strong>3.</strong> Pago del anticipo — $1.960 USD (40%)</li>
-            <li><strong>4.</strong> Kick-off inmediato: inicio de arquitectura y setup</li>
-            <li><strong>5.</strong> Entrega Manual de Identidad (10 abr) → inicio diseño</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTACT BANNER -->
-    <div class="contact-banner">
-      <div class="cb-logo">
+    <header class="doc-header">
+      <div class="logo-wrap">
         <img src="Horizontal_5.png" alt="Feral Tech" />
       </div>
-      <div class="cb-right">
-        <div class="cb-lbl">Preparada por</div>
-        <div class="cb-name">César Blanco</div>
-        <div class="cb-role">FERAL TECH &nbsp;·&nbsp; IMAGINA · CREA · EVOLUCIONA</div>
-        <div class="cb-email">cesarfbg10@gmail.com &nbsp;·&nbsp; feraltech.co</div>
+      <div class="header-right">
+        <div class="doc-badge">Propuesta de Desarrollo Web</div>
+        <div class="doc-title">Sitio Web Corporativo Regional</div>
+        <div class="doc-sub">
+          Qualier Internacional &nbsp;·&nbsp;
+          Venezuela &nbsp;·&nbsp; Colombia &nbsp;·&nbsp; Panamá &nbsp;·&nbsp; R. Dominicana
+        </div>
+        <div class="doc-sub" style="margin-top:4px;font-size:10px;color:var(--text-4)">
+          Marzo 2026 &nbsp;·&nbsp; Versión 1.0 &nbsp;·&nbsp; Confidencial
+        </div>
       </div>
+    </header>
+
+    <div class="accent-bar"></div>
+
+    <div class="page-body">
+
+      <!-- RESUMEN EJECUTIVO -->
+      <div class="section">
+        <div class="section-title">
+          <div class="dot"></div>
+          <h2>Resumen Ejecutivo</h2>
+        </div>
+        <div class="summary">
+          Se propone el desarrollo de un <strong>sitio web corporativo regional</strong> para Qualier Internacional, con
+          presencia unificada en cuatro mercados bajo el dominio <strong>qualierinternational.com</strong>. La solución
+          contempla un <strong>CMS propio</strong> sin dependencia de plataformas externas, arquitectura preparada para
+          integración futura con <strong>Odoo ERP</strong>, y un stack tecnológico moderno que garantiza rendimiento,
+          escalabilidad y control total del código. El lanzamiento está proyectado para <strong>al finalizar el proyecto</strong>, alineado al rebranding oficial del Grupo.
+        </div>
+      </div>
+
+      <!-- STACK -->
+      <div class="section">
+        <div class="section-title">
+          <div class="dot"></div>
+          <h2>Stack Tecnológico Recomendado</h2>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <div class="tc-name">Astro</div>
+            <div class="tc-role">Frontend · Sitio Público</div>
+            <p>Framework SEO-first. Renderizado híbrido SSG + SSR. Cero JS innecesario. Soporte nativo multiidioma
+              ES/EN.</p>
+          </div>
+          <div class="tech-card">
+            <div class="tc-name">Supabase</div>
+            <div class="tc-role">Base de Datos · Auth</div>
+            <p>PostgreSQL gestionado. Auth para el CMS. Almacenamiento de archivos. Preparado para API REST de Odoo.</p>
+          </div>
+          <div class="tech-card">
+            <div class="tc-name">Vercel</div>
+            <div class="tc-role">Hosting · Serverless</div>
+            <p>CDN global. Deploy automático desde Git. Funciones serverless para API y formularios. Soporte nativo
+              Astro.</p>
+          </div>
+          <div class="tech-card oc">
+            <div class="tc-name">CMS Propio</div>
+            <div class="tc-role">Panel de Administración</div>
+            <p>En Astro, integrado al proyecto. Gestión de productos, blog, contactos y datos por país. Sin licencias.
+            </p>
+          </div>
+        </div>
+        <div class="why-strip">
+          <strong>¿Por qué no WordPress u otras plataformas?</strong>&nbsp; Un stack propio elimina licencias y
+          dependencias, y permite integración directa con <strong>Odoo ERP</strong> vía API REST — algo que plataformas
+          cerradas no facilitan sin plugins costosos o limitaciones técnicas.
+        </div>
+      </div>
+
+      <!-- ALCANCE -->
+      <div class="section">
+        <div class="section-title">
+          <div class="dot"></div>
+          <h2>Alcance del Proyecto</h2>
+        </div>
+        <table class="ft-table">
+          <thead>
+            <tr>
+              <th style="width:24px">#</th>
+              <th style="width:165px">Fase</th>
+              <th>Entregables principales</th>
+              <th style="width:70px">Duración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pn">1</td>
+              <td><strong style="color:var(--text-2)">Arquitectura & Setup</strong></td>
+              <td>Configuración de repo, Supabase, Vercel, estructura base del proyecto y esquema de datos del CMS.</td>
+              <td><span class="pill b">4 sem.</span></td>
+            </tr>
+            <tr>
+              <td class="pn">2</td>
+              <td><strong style="color:var(--text-2)">UX / UI Design</strong></td>
+              <td>Wireframes, sistema de diseño basado en el Manual de Identidad Qualier, diseño de todas las vistas (8
+                secciones + CMS admin).</td>
+              <td><span class="pill b">4 sem.</span></td>
+            </tr>
+            <tr>
+              <td class="pn">3</td>
+              <td><strong style="color:var(--text-2)">Desarrollo Frontend</strong></td>
+              <td>Home, Quiénes Somos, Productos, Presencia x País (4 mercados), Calidad, Blog, Contacto, Trabaja con
+                Nosotros. Mobile-first.</td>
+              <td><span class="pill b">4 sem.</span></td>
+            </tr>
+            <tr>
+              <td class="pn">4</td>
+              <td><strong style="color:var(--text-2)">CMS Propio</strong></td>
+              <td>Panel admin con roles de usuario, CRUD completo de productos, blog, contactos y datos por país. Auth
+                con Supabase.</td>
+              <td><span class="pill b">4 sem.</span></td>
+            </tr>
+            <tr>
+              <td class="pn">5</td>
+              <td><strong style="color:var(--text-2)">Integraciones & SEO</strong></td>
+              <td>Redes sociales, formulario de contacto segmentado, meta tags, sitemap, Google Analytics 4.</td>
+              <td><span class="pill b">2 sem.</span></td>
+            </tr>
+            <tr>
+              <td class="pn">6</td>
+              <td><strong style="color:var(--text-2)">QA & Lanzamiento</strong></td>
+              <td>Pruebas multi-navegador y dispositivos, configuración de dominio, SSL, puesta en producción y entrega
+                de accesos.</td>
+              <td><span class="pill b">2 sem.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CRONOGRAMA -->
+      <div class="section">
+        <div class="section-title">
+          <div class="dot"></div>
+          <h2>Cronograma Estimado</h2>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-wk">Semanas 1–3</div>
+            <div class="tl-dt">Al inicio</div>
+            <div class="tl-lb">Arquitectura &<br>Setup</div>
+            <div class="tl-sb">Antes del manual de marca</div>
+          </div>
+          <div class="tl-item hl">
+            <div class="tl-wk">Semanas 4–6</div>
+            <div class="tl-dt">Tras aprobación</div>
+            <div class="tl-lb">Diseño<br>UX/UI</div>
+            <div class="tl-sb">Manual identidad disponible</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-wk">Semanas 7–10</div>
+            <div class="tl-dt">En desarrollo</div>
+            <div class="tl-lb">Frontend +<br>CMS</div>
+            <div class="tl-sb">Desarrollo en paralelo</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-wk">Semanas 11–12</div>
+            <div class="tl-dt">Cierre</div>
+            <div class="tl-lb">Integraciones,<br>QA & 🚀</div>
+            <div class="tl-sb">Al completar desarrollo</div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-  </div>
+    <footer class="page-footer">
+      <p><strong>César Blanco &nbsp;·&nbsp; Feral Tech</strong> &nbsp;·&nbsp; cesarfbg10@gmail.com</p>
+      <p>Propuesta válida 30 días &nbsp;·&nbsp; Pág. 1 / 2</p>
+    </footer>
 
-  <footer class="page-footer">
-    <p>TRM referencia $3.700 COP/USD &nbsp;·&nbsp; Valor contractual en USD</p>
-    <p>© 2026 <strong>Feral Tech</strong> &nbsp;·&nbsp; Todos los derechos reservados</p>
-  </footer>
+  </div><!-- /page 1 -->
 
-</div><!-- /page 2 -->
+
+  <!-- ═══════════ PAGE 2 ═══════════ -->
+  <div class="page">
+
+    <header class="doc-header">
+      <div class="logo-wrap">
+        <img src="Horizontal_5.png" alt="Feral Tech" />
+      </div>
+      <div class="header-right">
+        <div class="doc-badge">Propuesta de Desarrollo Web</div>
+        <div class="doc-title">Inversión y Condiciones</div>
+        <div class="doc-sub">Qualier Internacional &nbsp;·&nbsp; Continuación &nbsp;·&nbsp; Pág. 2 / 2</div>
+      </div>
+    </header>
+
+    <div class="accent-bar"></div>
+
+    <div class="page-body">
+
+      <!-- REDES SOCIALES -->
+      <div class="section">
+        <div class="section-title">
+          <div class="dot"></div>
+          <h2>Integración con Redes Sociales — ¿Qué incluye?</h2>
+        </div>
+        <div class="social-grid">
+          <div class="sc-card">
+            <div class="sc-title">Previsualizaciones Enriquecidas (OG)</div>
+            <p>Cuando cualquier URL del sitio se comparte en WhatsApp, LinkedIn, Facebook o Telegram, se genera
+              automáticamente una tarjeta visual con imagen, título y descripción. Aumenta la tasa de clics en
+              comunicaciones de marca.</p>
+          </div>
+          <div class="sc-card">
+            <div class="sc-title">Botones de Compartir y WhatsApp</div>
+            <p>Blog y fichas de producto con botones para compartir en redes. Cada sección de país incluirá un botón de
+              <strong>WhatsApp Business</strong> con el número local de atención directa.
+            </p>
+          </div>
+          <div class="sc-card oc">
+            <div class="sc-title">Píxeles de Seguimiento y Analytics</div>
+            <p><strong>Facebook Pixel</strong> y <strong>LinkedIn Insight Tag</strong> para retargeting y audiencias
+              similares. <strong>Google Analytics 4</strong> para tráfico, conversiones y origen de visitas por país.
+            </p>
+          </div>
+          <div class="sc-card">
+            <div class="sc-title">Links a Perfiles Oficiales</div>
+            <p>Cabecera y pie de página con íconos a Instagram, LinkedIn y Facebook. Configurables desde el CMS sin
+              tocar código, diferenciables por país si se requiere.</p>
+          </div>
+          <div class="sc-card">
+            <div class="sc-title">SEO Social y Schema Markup</div>
+            <p>Metadatos estructurados <strong>Schema.org</strong> para empresa, productos, ubicaciones y artículos.
+              Mejora el posicionamiento orgánico y las búsquedas de marca en Google.</p>
+          </div>
+          <div class="sc-card oc">
+            <div class="sc-title">Feed de Instagram (Opcional)</div>
+            <p>Últimas publicaciones del Instagram corporativo en la página de inicio. Actualización automática.
+              <em>Requiere cuenta de Instagram Business verificada.</em>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INVERSIÓN -->
+      <div class="section">
+        <div class="section-title">
+          <div class="dot"></div>
+          <h2>Inversión · Desarrollo del Sitio</h2>
+        </div>
+        <table class="ft-table">
+          <thead>
+            <tr>
+              <th>Fase</th>
+              <th>Descripción</th>
+              <th style="width:88px">USD</th>
+              <th style="width:118px">COP aprox.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pn">Fase 1</td>
+              <td>Arquitectura, setup de infraestructura y base de datos</td>
+              <td style="font-weight:700;color:var(--text)">$500</td>
+              <td style="color:var(--text-4);font-size:11px">$1.850.000</td>
+            </tr>
+            <tr>
+              <td class="pn">Fase 2</td>
+              <td>Diseño UX/UI completo — wireframes + diseño visual + sistema de diseño</td>
+              <td style="font-weight:700;color:var(--text)">$900</td>
+              <td style="color:var(--text-4);font-size:11px">$3.330.000</td>
+            </tr>
+            <tr>
+              <td class="pn">Fase 3</td>
+              <td>Desarrollo frontend Astro — 8 secciones responsivas (mobile-first)</td>
+              <td style="font-weight:700;color:var(--text)">$1.400</td>
+              <td style="color:var(--text-4);font-size:11px">$5.180.000</td>
+            </tr>
+            <tr>
+              <td class="pn">Fase 4</td>
+              <td>CMS propio — panel admin, roles, CRUD completo, gestión de medios</td>
+              <td style="font-weight:700;color:var(--text)">$1.400</td>
+              <td style="color:var(--text-4);font-size:11px">$5.180.000</td>
+            </tr>
+            <tr>
+              <td class="pn">Fase 5–6</td>
+              <td>Integraciones RRSS, SEO, formularios, QA y puesta en producción</td>
+              <td style="font-weight:700;color:var(--text)">$700</td>
+              <td style="color:var(--text-4);font-size:11px">$2.590.000</td>
+            </tr>
+            <tr class="total-row">
+              <td colspan="2">TOTAL PROYECTO &nbsp;·&nbsp; Precio fijo, todo incluido</td>
+              <td>$4.900 USD</td>
+              <td>~$18.130.000</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="payment-grid">
+          <div class="pay-card">
+            <div class="pc-lbl">Anticipo al inicio · 40%</div>
+            <div class="pc-amt">$1.960</div>
+            <div class="pc-cop">~$7.252.000 COP</div>
+            <div class="pc-note">Al firmar el contrato, antes de iniciar la Fase 1.</div>
+          </div>
+          <div class="pay-card hi">
+            <div class="pc-lbl">Pago al lanzamiento · 60%</div>
+            <div class="pc-amt">$2.940</div>
+            <div class="pc-cop">~$10.878.000 COP</div>
+            <div class="pc-note">Al aprobar el sitio en producción, antes de entrega de accesos.</div>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <span>📌</span>
+          <span>TRM de referencia: <strong>1 USD = $3.700 COP</strong> (marzo 2026). El precio en USD es el valor
+            contractual. Los costos de infraestructura (Vercel + Supabase) <strong>no están incluidos</strong> y son
+            asumidos por el cliente (~$0–50 USD/mes según tráfico).</span>
+        </div>
+      </div>
+
+      <!-- MANTENIMIENTO -->
+      <div class="section">
+        <div class="section-title">
+          <div class="dot"></div>
+          <h2>Mantenimiento Post-Lanzamiento &amp; Roadmap</h2>
+        </div>
+        <div class="two-col">
+          <div class="info-card">
+            <h4>
+              Plan Estándar
+              <span style="font-size:11px;font-weight:600;color:var(--orange)">$150 USD/mes</span>
+            </h4>
+            <ul>
+              <li>Monitoreo de disponibilidad y rendimiento</li>
+              <li>Actualizaciones de dependencias y seguridad</li>
+              <li>Soporte técnico — hasta 4 horas/mes</li>
+              <li>Corrección de bugs post-lanzamiento</li>
+              <li>Backups mensuales de base de datos</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4>Fases Futuras <span style="font-weight:400;font-size:10px;color:var(--text-4)">(no incluidas)</span>
+            </h4>
+            <ul>
+              <li><span class="pill g">Fase 2</span>&nbsp; Integración Odoo ERP — portal de clientes</li>
+              <li><span class="pill g">Fase 2</span>&nbsp; Intranet corporativa con autenticación</li>
+              <li><span class="pill o">Opcional</span>&nbsp; Versión en inglés del sitio</li>
+              <li><span class="pill o">Opcional</span>&nbsp; App móvil nativa o PWA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONDICIONES -->
+      <div class="section">
+        <div class="section-title">
+          <div class="dot"></div>
+          <h2>Condiciones &amp; Próximos Pasos</h2>
+        </div>
+        <div class="two-col">
+          <div class="info-card">
+            <h4>Condiciones generales</h4>
+            <ul>
+              <li>Propuesta válida por <strong>30 días</strong> calendario</li>
+              <li>El cliente provee contenidos: textos, fotos, logos y datos legales por país</li>
+              <li>Diseño visual inicia tras entrega del Manual de Identidad</li>
+              <li>Pagos en COP se acuerdan a TRM del día de pago</li>
+              <li>30 días de garantía post-lanzamiento sin costo adicional</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4>Para proceder</h4>
+            <ul>
+              <li><strong>1.</strong> Aprobación de esta propuesta</li>
+              <li><strong>2.</strong> Firma del contrato de prestación de servicios</li>
+              <li><strong>3.</strong> Pago del anticipo — $1.960 USD (40%)</li>
+              <li><strong>4.</strong> Kick-off inmediato: inicio de arquitectura y setup</li>
+              <li><strong>5.</strong> Entrega Manual de Identidad → inicio diseño</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT BANNER -->
+      <div class="contact-banner">
+        <div class="cb-logo">
+          <img src="Horizontal_5.png" alt="Feral Tech" />
+        </div>
+        <div class="cb-right">
+          <div class="cb-lbl">Preparada por</div>
+          <div class="cb-name">César Blanco</div>
+          <div class="cb-role">FERAL TECH &nbsp;·&nbsp; IMAGINA · CREA · EVOLUCIONA</div>
+          <div class="cb-email">cesarfbg10@gmail.com &nbsp;·&nbsp; feraltech.co</div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="page-footer">
+      <p>TRM referencia $3.700 COP/USD &nbsp;·&nbsp; Valor contractual en USD</p>
+      <p>© 2026 <strong>Feral Tech</strong> &nbsp;·&nbsp; Todos los derechos reservados</p>
+    </footer>
+
+  </div><!-- /page 2 -->
 
 </body>
+
 </html>
