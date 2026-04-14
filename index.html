@@ -733,7 +733,7 @@
           Venezuela &nbsp;·&nbsp; Colombia &nbsp;·&nbsp; Panamá &nbsp;·&nbsp; R. Dominicana
         </div>
         <div class="doc-sub" style="margin-top:4px;font-size:10px;color:var(--text-4)">
-          Marzo 2026 &nbsp;·&nbsp; Versión 1.0 &nbsp;·&nbsp; Confidencial
+          Abril 2026 &nbsp;·&nbsp; Versión 2.0 &nbsp;·&nbsp; Confidencial
         </div>
       </div>
     </header>
@@ -748,13 +748,46 @@
           <div class="dot"></div>
           <h2>Resumen Ejecutivo</h2>
         </div>
+
+        <!-- Price reduction highlight -->
+        <div
+          style="background:rgba(242,100,25,.08);border:1px solid rgba(242,100,25,.22);border-radius:8px;padding:14px 18px;margin-bottom:12px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:150px;">
+            <div
+              style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--text-4);margin-bottom:4px;">
+              Propuesta anterior</div>
+            <div
+              style="font-size:21px;font-weight:900;color:var(--text-3);text-decoration:line-through;letter-spacing:-1px;">
+              $4.900 USD</div>
+          </div>
+          <div style="font-size:18px;color:var(--text-4);">→</div>
+          <div style="flex:1;min-width:150px;">
+            <div
+              style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--orange);margin-bottom:4px;">
+              Propuesta revisada · 3 fases</div>
+            <div style="font-size:23px;font-weight:900;color:var(--text);letter-spacing:-1px;">$3.900 USD <span
+                style="font-size:13px;font-weight:700;color:var(--orange)"></span></div>
+          </div>
+          <div
+            style="background:rgba(242,100,25,.15);border:1px solid rgba(242,100,25,.3);border-radius:6px;padding:10px 16px;text-align:center;flex-shrink:0;">
+            <div
+              style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--text-4);">
+              Entrada · Fase 1</div>
+            <div style="font-size:20px;font-weight:900;color:var(--orange);letter-spacing:-1px;">$1.800 USD</div>
+            <div style="font-size:9px;color:var(--text-4);">sitio en línea desde aquí</div>
+          </div>
+        </div>
+
         <div class="summary">
-          Se propone el desarrollo de un <strong>sitio web corporativo regional</strong> para Qualier Internacional, con
-          presencia unificada en cuatro mercados bajo el dominio <strong>qualierinternational.com</strong>. La solución
-          contempla un <strong>CMS propio</strong> sin dependencia de plataformas externas, arquitectura preparada para
-          integración futura con <strong>Odoo ERP</strong>, y un stack tecnológico moderno que garantiza rendimiento,
-          escalabilidad y control total del código. El lanzamiento está proyectado para <strong>al finalizar el
-            proyecto</strong>, alineado al rebranding oficial del Grupo.
+          Tras revisar la propuesta inicial y escuchar las necesidades del equipo Qualier, presentamos una versión
+          optimizada que estructura el desarrollo en <strong>tres fases independientes y progresivas</strong>,
+          reduciendo
+          la inversión total de $4.900 a <strong>$3.900 USD</strong> — un ahorro de $1.000. La <strong>Fase 1</strong>
+          pone en línea el hub corporativo regional por <strong>$1.800 USD</strong>: un sitio unificado bajo el dominio
+          <strong>qualierinternational.com</strong> que presenta la identidad y valores del Grupo, y conecta
+          estratégicamente con los canales digitales propios de cada mercado. Las Fases 2 y 3 — blog, SEO avanzado e
+          integración con redes sociales — se activan en el momento que Qualier lo defina, sin interrumpir la operación
+          del sitio principal.
         </div>
       </div>
 
@@ -785,7 +818,8 @@
           <div class="tech-card oc">
             <div class="tc-name">CMS Propio</div>
             <div class="tc-role">Panel de Administración</div>
-            <p>En Astro, integrado al proyecto. Gestión de productos, blog, contactos y datos por país. Sin licencias.
+            <p>En Astro, integrado al proyecto. Fase 1: gestión de contactos, formularios y datos por país. Blog y
+              módulos avanzados disponibles en fases siguientes. Sin licencias.
             </p>
           </div>
         </div>
@@ -800,60 +834,103 @@
       <div class="section">
         <div class="section-title">
           <div class="dot"></div>
-          <h2>Alcance del Proyecto</h2>
+          <h2>Alcance · Plan por Fases</h2>
         </div>
         <table class="ft-table">
           <thead>
             <tr>
-              <th style="width:24px">#</th>
-              <th style="width:165px">Fase</th>
+              <th style="width:32px">#</th>
+              <th style="width:165px">Etapa</th>
               <th>Entregables principales</th>
               <th style="width:70px">Duración</th>
             </tr>
           </thead>
           <tbody>
+            <!-- FASE 1 -->
+            <tr style="background:rgba(18,104,153,.13);">
+              <td colspan="4"
+                style="padding:6px 11px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--blue-l);">
+                Fase 1 &nbsp;·&nbsp; Sitio Hub Corporativo &nbsp;·&nbsp; $1.800 USD
+              </td>
+            </tr>
             <tr>
-              <td class="pn">1</td>
+              <td class="pn">1.1</td>
               <td><strong style="color:var(--text-2)">Arquitectura & Setup</strong></td>
               <td>Configuración de repo, Supabase, Vercel, estructura base del proyecto y esquema de datos del CMS.</td>
-              <td><span class="pill b">4 sem.</span></td>
-            </tr>
-            <tr>
-              <td class="pn">2</td>
-              <td><strong style="color:var(--text-2)">UX / UI Design</strong></td>
-              <td>Wireframes, sistema de diseño basado en el Manual de Identidad Qualier, diseño de todas las vistas (8
-                secciones + CMS admin).</td>
-              <td><span class="pill b">4 sem.</span></td>
-            </tr>
-            <tr>
-              <td class="pn">3</td>
-              <td><strong style="color:var(--text-2)">Desarrollo Frontend</strong></td>
-              <td>Home, Quiénes Somos, Productos, Presencia x País (4 mercados), Calidad, Blog, Contacto, Trabaja con
-                Nosotros. Mobile-first.</td>
-              <td><span class="pill b">4 sem.</span></td>
-            </tr>
-            <tr>
-              <td class="pn">4</td>
-              <td><strong style="color:var(--text-2)">CMS Propio</strong></td>
-              <td>Panel admin con roles de usuario, CRUD completo de productos, blog, contactos y datos por país. Auth
-                con Supabase.</td>
-              <td><span class="pill b">4 sem.</span></td>
-            </tr>
-            <tr>
-              <td class="pn">5</td>
-              <td><strong style="color:var(--text-2)">Integraciones & SEO</strong></td>
-              <td>Redes sociales, formulario de contacto segmentado, meta tags, sitemap, Google Analytics 4.</td>
               <td><span class="pill b">2 sem.</span></td>
             </tr>
             <tr>
-              <td class="pn">6</td>
-              <td><strong style="color:var(--text-2)">QA & Lanzamiento</strong></td>
-              <td>Pruebas multi-navegador y dispositivos, configuración de dominio, SSL, puesta en producción y entrega
-                de accesos.</td>
+              <td class="pn">1.2</td>
+              <td><strong style="color:var(--text-2)">UX / UI Design</strong></td>
+              <td>Wireframes y sistema de diseño basado en el Manual de Identidad Qualier — 6 páginas core + panel CMS
+                admin.</td>
+              <td><span class="pill b">3 sem.</span></td>
+            </tr>
+            <tr>
+              <td class="pn">1.3</td>
+              <td><strong style="color:var(--text-2)">Desarrollo Frontend</strong></td>
+              <td>Home, Quiénes Somos, Presencia Regional (hub x país), Calidad, Contacto, Trabaja con Nosotros.
+                Mobile-first.</td>
+              <td><span class="pill b">3 sem.</span></td>
+            </tr>
+            <tr>
+              <td class="pn">1.4</td>
+              <td><strong style="color:var(--text-2)">CMS & Lanzamiento</strong></td>
+              <td>Panel admin: gestión de datos por país, formularios de contacto, botón WhatsApp Business por mercado.
+                QA multi-navegador, dominio, SSL y puesta en producción.</td>
+              <td><span class="pill b">2 sem.</span></td>
+            </tr>
+            <!-- FASE 2 -->
+            <tr style="background:rgba(255,255,255,.04);">
+              <td colspan="4"
+                style="padding:6px 11px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--text-4);">
+                Fase 2 &nbsp;·&nbsp; Blog & SEO Técnico &nbsp;·&nbsp; $1.100 USD &nbsp;·&nbsp; A definir con el cliente
+              </td>
+            </tr>
+            <tr>
+              <td class="pn">2.1</td>
+              <td><strong style="color:var(--text-2)">Blog Corporativo</strong></td>
+              <td>Diseño e implementación del blog. Módulo CMS completo: posts, categorías, autores e imágenes.</td>
+              <td><span class="pill b">3 sem.</span></td>
+            </tr>
+            <tr>
+              <td class="pn">2.2</td>
+              <td><strong style="color:var(--text-2)">SEO Técnico</strong></td>
+              <td>Meta tags por página, sitemap XML automático, robots.txt, Google Analytics 4 con eventos de
+                conversión.</td>
+              <td><span class="pill b">2 sem.</span></td>
+            </tr>
+            <!-- FASE 3 -->
+            <tr style="background:rgba(242,100,25,.06);">
+              <td colspan="4"
+                style="padding:6px 11px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--text-4);">
+                Fase 3 &nbsp;·&nbsp; Redes Sociales & Marketing Digital &nbsp;·&nbsp; $1.000 USD &nbsp;·&nbsp; A definir
+                con el cliente
+              </td>
+            </tr>
+            <tr>
+              <td class="pn">3.1</td>
+              <td><strong style="color:var(--text-2)">Integraciones RRSS</strong></td>
+              <td>OG previews (WhatsApp/LinkedIn/Facebook), Facebook Pixel, LinkedIn Insight Tag, links a perfiles
+                oficiales configurables desde CMS.</td>
+              <td><span class="pill b">2 sem.</span></td>
+            </tr>
+            <tr>
+              <td class="pn">3.2</td>
+              <td><strong style="color:var(--text-2)">SEO Social & Avanzado</strong></td>
+              <td>Schema.org para empresa, ubicaciones y artículos. Instagram Feed opcional. QA final de visibilidad
+                digital.</td>
               <td><span class="pill b">2 sem.</span></td>
             </tr>
           </tbody>
         </table>
+        <div class="why-strip">
+          <strong>Sobre «Presencia Regional» (Fase 1):</strong>&nbsp; Esta sección presenta cada uno de los cuatro
+          mercados del Grupo y enlaza de forma natural hacia el sitio, landing page o canal digital propio de cada país
+          — ya sean plataformas actuales o recursos que se desarrollen en el futuro. El hub corporativo no duplica ni
+          reemplaza los ecosistemas digitales locales de cada filial; los articula bajo una identidad regional
+          unificada, amplificando la visibilidad de cada mercado desde un único punto de entrada.
+        </div>
       </div>
 
       <!-- CRONOGRAMA -->
@@ -863,29 +940,23 @@
           <h2>Cronograma Estimado</h2>
         </div>
         <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-wk">Semanas 1–3</div>
-            <div class="tl-dt">Al inicio</div>
-            <div class="tl-lb">Arquitectura &<br>Setup</div>
-            <div class="tl-sb">Antes del manual de marca</div>
-          </div>
           <div class="tl-item hl">
-            <div class="tl-wk">Semanas 4–6</div>
-            <div class="tl-dt">Tras aprobación</div>
-            <div class="tl-lb">Diseño<br>UX/UI</div>
-            <div class="tl-sb">Manual identidad disponible</div>
+            <div class="tl-wk">Semanas 1–10</div>
+            <div class="tl-dt" style="color:var(--orange)">$1.800 USD</div>
+            <div class="tl-lb">Fase 1<br>Hub Corporativo</div>
+            <div class="tl-sb">Setup · UI · Frontend · CMS · 🚀</div>
           </div>
           <div class="tl-item">
-            <div class="tl-wk">Semanas 7–10</div>
-            <div class="tl-dt">En desarrollo</div>
-            <div class="tl-lb">Frontend +<br>CMS</div>
-            <div class="tl-sb">Desarrollo en paralelo</div>
+            <div class="tl-wk">Semanas 11–15</div>
+            <div class="tl-dt">$1.100 USD</div>
+            <div class="tl-lb">Fase 2<br>Blog & SEO</div>
+            <div class="tl-sb">Fecha a definir con el cliente</div>
           </div>
           <div class="tl-item">
-            <div class="tl-wk">Semanas 11–12</div>
-            <div class="tl-dt">Cierre</div>
-            <div class="tl-lb">Integraciones,<br>QA & 🚀</div>
-            <div class="tl-sb">Al completar desarrollo</div>
+            <div class="tl-wk">Semanas 16–19</div>
+            <div class="tl-dt">$1.000 USD</div>
+            <div class="tl-lb">Fase 3<br>RRSS & Marketing</div>
+            <div class="tl-sb">Fecha a definir con el cliente</div>
           </div>
         </div>
       </div>
@@ -909,7 +980,7 @@
       </div>
       <div class="header-right">
         <div class="doc-badge">Propuesta de Desarrollo Web</div>
-        <div class="doc-title">Inversión y Condiciones</div>
+        <div class="doc-title">Inversión por Fases & Condiciones</div>
         <div class="doc-sub">Qualier Internacional &nbsp;·&nbsp; Continuación &nbsp;·&nbsp; Pág. 2 / 2</div>
       </div>
     </header>
@@ -918,43 +989,46 @@
 
     <div class="page-body">
 
-      <!-- REDES SOCIALES -->
+      <!-- DETALLE FASES 2 Y 3 -->
       <div class="section">
         <div class="section-title">
           <div class="dot"></div>
-          <h2>Integración con Redes Sociales — ¿Qué incluye?</h2>
+          <h2>Detalle · Fases 2 y 3</h2>
         </div>
         <div class="social-grid">
           <div class="sc-card">
-            <div class="sc-title">Previsualizaciones Enriquecidas (OG)</div>
-            <p>Cuando cualquier URL del sitio se comparte en WhatsApp, LinkedIn, Facebook o Telegram, se genera
-              automáticamente una tarjeta visual con imagen, título y descripción. Aumenta la tasa de clics en
-              comunicaciones de marca.</p>
+            <div class="sc-title"><span class="pill b" style="margin-right:6px;vertical-align:middle">Fase 2</span> Blog
+              Corporativo</div>
+            <p>Sección de artículos y noticias del Grupo. Panel CMS completo con gestión de posts, categorías, autores
+              e imágenes. Diseño integrado al sistema visual del sitio.</p>
           </div>
           <div class="sc-card">
-            <div class="sc-title">Botones de Compartir y WhatsApp</div>
-            <p>Blog y fichas de producto con botones para compartir en redes. Cada sección de país incluirá un botón de
-              <strong>WhatsApp Business</strong> con el número local de atención directa.
-            </p>
+            <div class="sc-title"><span class="pill b" style="margin-right:6px;vertical-align:middle">Fase 2</span> SEO
+              Técnico & Analytics</div>
+            <p>Meta tags personalizados por página, sitemap XML automático, robots.txt, y <strong>Google Analytics
+                4</strong> con eventos de conversión y segmentación por país.</p>
           </div>
           <div class="sc-card oc">
-            <div class="sc-title">Píxeles de Seguimiento y Analytics</div>
+            <div class="sc-title"><span class="pill o" style="margin-right:6px;vertical-align:middle">Fase 3</span>
+              Previsualizaciones Enriquecidas (OG)</div>
+            <p>Cuando cualquier URL se comparte en WhatsApp, LinkedIn o Facebook, se genera automáticamente una tarjeta
+              visual con imagen, título y descripción. Aumenta la tasa de clics en comunicaciones de marca.</p>
+          </div>
+          <div class="sc-card oc">
+            <div class="sc-title"><span class="pill o" style="margin-right:6px;vertical-align:middle">Fase 3</span>
+              Píxeles de Seguimiento</div>
             <p><strong>Facebook Pixel</strong> y <strong>LinkedIn Insight Tag</strong> para retargeting y audiencias
-              similares. <strong>Google Analytics 4</strong> para tráfico, conversiones y origen de visitas por país.
-            </p>
-          </div>
-          <div class="sc-card">
-            <div class="sc-title">Links a Perfiles Oficiales</div>
-            <p>Cabecera y pie de página con íconos a Instagram, LinkedIn y Facebook. Configurables desde el CMS sin
-              tocar código, diferenciables por país si se requiere.</p>
-          </div>
-          <div class="sc-card">
-            <div class="sc-title">SEO Social y Schema Markup</div>
-            <p>Metadatos estructurados <strong>Schema.org</strong> para empresa, productos, ubicaciones y artículos.
-              Mejora el posicionamiento orgánico y las búsquedas de marca en Google.</p>
+              similares. Links a perfiles oficiales (Instagram, LinkedIn, Facebook) configurables desde el CMS.</p>
           </div>
           <div class="sc-card oc">
-            <div class="sc-title">Feed de Instagram (Opcional)</div>
+            <div class="sc-title"><span class="pill o" style="margin-right:6px;vertical-align:middle">Fase 3</span> SEO
+              Social & Schema Markup</div>
+            <p>Metadatos estructurados <strong>Schema.org</strong> para empresa, ubicaciones y artículos. Mejora el
+              posicionamiento orgánico y las búsquedas de marca en Google.</p>
+          </div>
+          <div class="sc-card oc">
+            <div class="sc-title"><span class="pill o" style="margin-right:6px;vertical-align:middle">Fase 3</span>
+              Instagram Feed <em style="font-size:10px">(Opcional)</em></div>
             <p>Últimas publicaciones del Instagram corporativo en la página de inicio. Actualización automática.
               <em>Requiere cuenta de Instagram Business verificada.</em>
             </p>
@@ -966,12 +1040,12 @@
       <div class="section">
         <div class="section-title">
           <div class="dot"></div>
-          <h2>Inversión · Desarrollo del Sitio</h2>
+          <h2>Inversión · Plan por Fases</h2>
         </div>
         <table class="ft-table">
           <thead>
             <tr>
-              <th>Fase</th>
+              <th style="width:60px">Fase</th>
               <th>Descripción</th>
               <th style="width:88px">USD</th>
               <th style="width:118px">COP aprox.</th>
@@ -980,62 +1054,57 @@
           <tbody>
             <tr>
               <td class="pn">Fase 1</td>
-              <td>Arquitectura, setup de infraestructura y base de datos</td>
-              <td style="font-weight:700;color:var(--text)">$500</td>
-              <td style="color:var(--text-4);font-size:11px">$1.850.000</td>
+              <td>Sitio Hub Corporativo — arquitectura, UX/UI, 6 páginas frontend, CMS básico, WhatsApp Business por
+                país, QA y lanzamiento</td>
+              <td style="font-weight:700;color:var(--text)">$1.800</td>
+              <td style="color:var(--text-4);font-size:11px">$6.660.000</td>
             </tr>
             <tr>
               <td class="pn">Fase 2</td>
-              <td>Diseño UX/UI completo — wireframes + diseño visual + sistema de diseño</td>
-              <td style="font-weight:700;color:var(--text)">$900</td>
-              <td style="color:var(--text-4);font-size:11px">$3.330.000</td>
+              <td>Blog & SEO Técnico — blog corporativo completo, módulo CMS de contenidos, meta tags, sitemap, Google
+                Analytics 4</td>
+              <td style="font-weight:700;color:var(--text)">$1.100</td>
+              <td style="color:var(--text-4);font-size:11px">$4.070.000</td>
             </tr>
             <tr>
               <td class="pn">Fase 3</td>
-              <td>Desarrollo frontend Astro — 8 secciones responsivas (mobile-first)</td>
-              <td style="font-weight:700;color:var(--text)">$1.400</td>
-              <td style="color:var(--text-4);font-size:11px">$5.180.000</td>
-            </tr>
-            <tr>
-              <td class="pn">Fase 4</td>
-              <td>CMS propio — panel admin, roles, CRUD completo, gestión de medios</td>
-              <td style="font-weight:700;color:var(--text)">$1.400</td>
-              <td style="color:var(--text-4);font-size:11px">$5.180.000</td>
-            </tr>
-            <tr>
-              <td class="pn">Fase 5–6</td>
-              <td>Integraciones RRSS, SEO, formularios, QA y puesta en producción</td>
-              <td style="font-weight:700;color:var(--text)">$700</td>
-              <td style="color:var(--text-4);font-size:11px">$2.590.000</td>
+              <td>RRSS & Marketing Digital — OG previews, píxeles de seguimiento (FB/LinkedIn), Schema.org, Instagram
+                Feed opcional</td>
+              <td style="font-weight:700;color:var(--text)">$1.000</td>
+              <td style="color:var(--text-4);font-size:11px">$3.700.000</td>
             </tr>
             <tr class="total-row">
-              <td colspan="2">TOTAL PROYECTO &nbsp;·&nbsp; Precio fijo, todo incluido</td>
-              <td>$4.900 USD</td>
-              <td>~$18.130.000</td>
+              <td colspan="2">TOTAL 3 FASES &nbsp;·&nbsp; Precio fijo por fase · Contratación independiente</td>
+              <td>$3.900 USD</td>
+              <td>~$14.430.000</td>
             </tr>
           </tbody>
         </table>
 
+        <div
+          style="margin-top:10px;margin-bottom:4px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--text-4);padding-left:2px;">
+          Condiciones de pago · Fase 1</div>
         <div class="payment-grid">
           <div class="pay-card">
-            <div class="pc-lbl">Anticipo al inicio · 40%</div>
-            <div class="pc-amt">$1.960</div>
-            <div class="pc-cop">~$7.252.000 COP</div>
+            <div class="pc-lbl">Anticipo al inicio · Fase 1 · 40%</div>
+            <div class="pc-amt">$720</div>
+            <div class="pc-cop">~$2.664.000 COP</div>
             <div class="pc-note">Al firmar el contrato, antes de iniciar la Fase 1.</div>
           </div>
           <div class="pay-card hi">
-            <div class="pc-lbl">Pago al lanzamiento · 60%</div>
-            <div class="pc-amt">$2.940</div>
-            <div class="pc-cop">~$10.878.000 COP</div>
+            <div class="pc-lbl">Pago al lanzamiento · Fase 1 · 60%</div>
+            <div class="pc-amt">$1.080</div>
+            <div class="pc-cop">~$3.996.000 COP</div>
             <div class="pc-note">Al aprobar el sitio en producción, antes de entrega de accesos.</div>
           </div>
         </div>
 
         <div class="note-box">
           <span>📌</span>
-          <span>TRM de referencia: <strong>1 USD = $3.700 COP</strong> (marzo 2026). El precio en USD es el valor
-            contractual. Los costos de infraestructura (Vercel + Supabase) <strong>no están incluidos</strong> y son
-            asumidos por el cliente (~$0–50 USD/mes según tráfico).</span>
+          <span>TRM de referencia: <strong>1 USD = $3.700 COP</strong> (abril 2026). El precio en USD es el valor
+            contractual. Las Fases 2 y 3 se contratan de forma independiente con sus propias condiciones de pago.
+            Los costos de infraestructura (Vercel + Supabase) <strong>no están incluidos</strong> y son asumidos
+            por el cliente (~$0–50 USD/mes según tráfico).</span>
         </div>
       </div>
 
@@ -1063,8 +1132,8 @@
             <h4>Fases Futuras <span style="font-weight:400;font-size:10px;color:var(--text-4)">(no incluidas)</span>
             </h4>
             <ul>
-              <li><span class="pill g">Fase 2</span>&nbsp; Integración Odoo ERP — portal de clientes</li>
-              <li><span class="pill g">Fase 2</span>&nbsp; Intranet corporativa con autenticación</li>
+              <li><span class="pill g">Futuro</span>&nbsp; Integración Odoo ERP — portal de clientes</li>
+              <li><span class="pill g">Futuro</span>&nbsp; Intranet corporativa con autenticación</li>
               <li><span class="pill o">Opcional</span>&nbsp; Versión en inglés del sitio</li>
               <li><span class="pill o">Opcional</span>&nbsp; App móvil nativa o PWA</li>
             </ul>
@@ -1094,7 +1163,7 @@
             <ul>
               <li><strong>1.</strong> Aprobación de esta propuesta</li>
               <li><strong>2.</strong> Firma del contrato de prestación de servicios</li>
-              <li><strong>3.</strong> Pago del anticipo — $1.960 USD (40%)</li>
+              <li><strong>3.</strong> Pago del anticipo Fase 1 — $720 USD (40%)</li>
               <li><strong>4.</strong> Kick-off inmediato: inicio de arquitectura y setup</li>
               <li><strong>5.</strong> Entrega Manual de Identidad → inicio diseño</li>
             </ul>
